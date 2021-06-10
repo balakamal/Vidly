@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Vidly.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+@Html.ActionLink("New Customer","Form","Customers",null,new { @class = "btn btn-primary" })
+<br> <br />
+@if(Model.Any())
+{
+    <table class="table	table-bordered	table-hover">
+        <thead>
+            <tr>
+                <th>Customers</th>
+                <th>MembershipType</th>
+            </tr>
+        </thead>
+        @foreach(var i in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(i.Name, "Edit", "Customers", new { id = i.Id },null)
+                </td>
+                <td>
+                    @i.MembershipType.Name
+                </td>
+            </tr>
+        }
+    </table>
+}
+
