@@ -40,7 +40,9 @@ namespace Vidly.Controllers
             ViewBag.Message = "New Movie";
             return View(viewModel);
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)

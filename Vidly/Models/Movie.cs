@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace Vidly.Models
 {
@@ -22,6 +23,7 @@ namespace Vidly.Models
         public DateTime AddedDate { get; set; }
 
         [Display(Name = "Stocks Available")]
+        [Range(1,20)]
         public int InStock { get; set; }
         public Genre Genre { get; set; }
 
