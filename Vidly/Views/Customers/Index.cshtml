@@ -14,6 +14,7 @@
             <tr>
                 <th>Customers</th>
                 <th>MembershipType</th>
+                <th>Delete</th>
             </tr>
         </thead>
         @foreach(var i in Model)
@@ -25,8 +26,15 @@
                 <td>
                     @i.MembershipType.Name
                 </td>
+                <td><button class="btn-link">Delete</button></td>
             </tr>
         }
     </table>
+}
+@section scripts
+{
+    <script>
+        $document.
+    </script>
 }
 
